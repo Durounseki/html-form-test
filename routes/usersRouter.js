@@ -12,6 +12,8 @@ usersRouter.get("/:id/update", usersController.usersUpdateGet);
 usersRouter.post("/:id/update", usersController.usersUpdatePost);
 //Delete user
 usersRouter.post("/:id/delete", usersController.usersDeletePost);
+//Find user
+usersRouter.get("/search", usersController.usersFindGet);
 
 
 

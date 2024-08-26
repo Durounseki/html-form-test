@@ -95,4 +95,19 @@ exports.usersDeletePost = (req, res) => {
     usersStorage.deleteUser(req.params.id);
     res.redirect("/");
   };
+
+//Find user
+
+exports.usersFindGet = (req, res) => {
+    const nameKeyword = req.query.userName || '';
+    const emailKeyword = req.query.userEmail || '';
+
+    const foundUsers = usersStorage.findUser(nameKeyword,emailKeyword);
+    console.log(foundUsers);
+
+    res.render("search-result", {
+        title: "Search result",
+        users: foundUsers,
+    });
+};
   
